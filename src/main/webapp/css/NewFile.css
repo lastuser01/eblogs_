@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+
+.btn {
+    background-color: #6B46C1;
+    border-radius: 50px;
+}
+
+.btn:hover {
+    background-color: #6B46C1;
+}
+
+.card {
+    border: none;
+    background: #7777772d;
+    box-shadow: 0px 0px 30px #ffffff7d;
+    border-radius: 20px;
+}
+
+.back-img {
+    background: url("https://plus.unsplash.com/premium_photo-1675585060416-c0963704aa61?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") !important;
+    backdrop-filter: blur(40px) !important;
+    min-height: 100vh;
+    background-repeat: center no-repeat;
+    background-size: cover;
+
+}
+
+.form-control {
+    background: transparent;
+    border: 1.5px solid white;
+}
+
+a {
+    color: #333;
+}
+
+#footer {
+    background-color: #4444443d;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+#filters::-webkit-scrollbar {
+    display: none !important;
+}
+
+.filter {
+    height: 100%;
+    padding: 10px;
+    padding-top:17px;
+    padding-bottom:15px;
+    padding-right: 30px;
+    color:#ffffff5d;
+}
+
+.filter:hover {
+    cursor: pointer;
+    color:#fff;
+}
+
+.filter::focus {
+    border-bottom: 2px solid #222;
+}
+
+.form-control::placeholder {
+    color: white;
+}
+
+.form-control:focus {
+    background:transparent !important;
+    color:white;
+}
+
+.form-control{
+	color:white;
+}
+
+#showblog::-webkit-scrollbar {
+	color:white;
+    background:transparent;
+    width:8px;
+}
+
+#showblog::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+    margin-left:20px;
+}
+
+#sidebarscroll::-webkit-scrollbar{
+    display: none !important;
+}
+
+#search{
+	padding-left:40px;
+}
+
