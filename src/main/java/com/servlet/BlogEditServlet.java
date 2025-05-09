@@ -19,7 +19,7 @@ public class BlogEditServlet extends HttpServlet {
 		int noteid = Integer.parseInt(request.getParameter("note_id"));
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		String imgUrl = request.getParameter("imgUrl");
+		String imgUrl = request.getParameter("ImgUrl");
 		
 		boolean f = false;
 		try {

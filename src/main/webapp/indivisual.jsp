@@ -68,7 +68,7 @@
  <!------------------------------------ content of blog ---------------------------------------------------------------- -->
               <h1 class="fw-bold "><%=po.getTitle() %></h1>
               <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-               <div class="d-flex align-items-center gap-2 my-4">
+               <div class="d-flex align-items-center gap-2 my-4 mb-5">
       				<i class="fa fa-user-circle" aria-hidden="true"></i>
       				<div class="d-flex align-items-center"><%=po.getAuthor() %>
       					<div class="rounded-pill border border-light ms-3 py-1 px-3">Follow</div>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -84,11 +84,12 @@
                      <i class="fa fa-comment" aria-hidden="true"></i><span> 50</span>
                  </div>  
                  <div class="col-6"></div>
-      			 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="col "><path fill="currentColor" fill-rule="evenodd" d="M4.385 12c0 .55.2 1.02.59 1.41.39.4.86.59 1.41.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.02.2-1.41.59-.4.39-.59.86-.59 1.41m5.62 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.42.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.03.2-1.42.59s-.58.86-.58 1.41m5.6 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.43.59s1.03-.2 1.42-.59.58-.86.58-1.41-.2-1.02-.58-1.41a1.93 1.93 0 0 0-1.42-.59c-.56 0-1.04.2-1.43.59s-.58.86-.58 1.41" clip-rule="evenodd"></path></svg>
+      			 <a href="" class="col"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="text-light"><path fill="currentColor" fill-rule="evenodd" d="M4.385 12c0 .55.2 1.02.59 1.41.39.4.86.59 1.41.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.02.2-1.41.59-.4.39-.59.86-.59 1.41m5.62 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.42.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.03.2-1.42.59s-.58.86-.58 1.41m5.6 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.43.59s1.03-.2 1.42-.59.58-.86.58-1.41-.2-1.02-.58-1.41a1.93 1.93 0 0 0-1.42-.59c-.56 0-1.04.2-1.43.59s-.58.86-.58 1.41" clip-rule="evenodd"></path></svg></a>
               </div>
     		  <hr >
     		  <img src="<%=po.getImgUrl() %>" alt="Article Image" class="img-fluid  my-5">
-    		  <p class="text-light" style="font-family:serif;" ><%= po.getContent() %></p>
+    		  <p class="text-light"><pre style="white-space: pre-wrap; word-wrap: break-word;font-family:serif; font-size:25px;"><%= po.getContent() %></pre>
+    		  </p>
     		  
   
   <!------------------------------------------- delete and edit button  ------------------------------------------------>

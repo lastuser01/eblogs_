@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light ">
 	 <b>
 	 	<a class="navbar-brand" href="showblogs.jsp" style="font-size: 22px; color: white ">
@@ -27,7 +26,7 @@
 		if(user != null) {	
 		%>
 		
-			<li class="nav-item"><a class="nav-link text-light ms-lg-3" href="showblogs.jsp"><i
+			<li class="nav-item"><a class="nav-link text-light ms-lg-3" href="myblogs.jsp"><i
 					class="fa fa-address-book-o" aria-hidden="true"></i> My Blogs</a>
 			</li>
 		</ul>

@@ -14,17 +14,7 @@
 <hr class="text-light m-0"/>
 <div class="container d-flex  me-lg-3">
     <div class="col-lg-8 col-md-12 me-lg-5">
-        <div id="filters" class="container d-flex flex-nowrap overflow-scroll text-light w-100">
-            <a href="showblogs.jsp" class="filter flex-shrink-0 text-decoration-none">For You <span class="badge rounded-pill text-bg-success">New</span></a>
-            <a href="filter.jsp?category=Self Improvement" class="filter flex-shrink-0 text-decoration-none">Self Improvement</a>
-            <a href="filter.jsp?category=Technology" class="filter flex-shrink-0 text-decoration-none">Technology</a>
-            <a href="filter.jsp?category=Programming" class="filter flex-shrink-0 text-decoration-none">Programming</a>
-            <a href="filter.jsp?category=Health and Wellness"  class="filter flex-shrink-0 text-decoration-none">Health and Wellness</a>
-            <a href="filter.jsp?category=Finance" class="filter flex-shrink-0 text-decoration-none">Finance</a>
-           <a href="filter.jsp?category=Entertainment"  class="filter flex-shrink-0 text-decoration-none">Entertainment</a>
-            <a href="filter.jsp?category=Lifestyle"  class="filter flex-shrink-0 text-decoration-none">Lifestyle</a>
-            <a href="filter.jsp?category=Business"  class="filter flex-shrink-0 text-decoration-none">Business</a>
-        </div>
+        
         <hr class="text-light m-0">
         
         <%
@@ -42,19 +32,14 @@
         %>
         
         <div class="container mt-2 pt-lg-4 overflow-y-scroll" id="showblog" style="height:100vh;">
-            <% if((user1 == null || user1 != null)) {
+            <% 
                 java.util.List<Post> post = com.DAO.PostDAO.showBlogs();
-                for(Post po : post) { %>
+                for(Post po : post) { 
+                if(user1 != null && po.getAuthor().equals(user1.getName())) {%>
                 <a href="indivisual.jsp?id=<%= po.getId() %>" class="row text-decoration-none">
                     <div class="card-body px-4 col-lg-4 ">
                         <p class="my-3 text-light">    
-                            <img
-                  src="https://i.pravatar.cc/101"
-                  class="rounded-circle"
-                  alt="John Doe"
-                  loading="lazy"
-                  height="30"
-                /> <%=po.getAuthor() %>
+                            <i class="fa fa-user-circle" aria-hidden="true"></i> <%=po.getAuthor() %>
                         </p>
                         <h3 class="card-title text-light mb-2"><%=po.getTitle() %></h3>
                         <p class="text-light "><%= po.getCategory() %></p>
@@ -74,7 +59,10 @@
                     <div class="col-lg-3 d-flex align-items-center"><img src="<%=po.getImgUrl() %>" class="card-img-top" alt="..."></div>
                     <hr class="text-light">
                 </a>
-                
+                <div class="container mb-5">
+                        <a href="DeleteServlet?note_id=<%=po.getId() %>" class="btn">Delete</a>
+                        <a href="edit.jsp?note_id=<%=po.getId() %>" class="btn">Edit</a>
+                    </div>
             <% } } %>
         </div>
     </div>

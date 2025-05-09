@@ -37,10 +37,14 @@
 							<textarea rows="9" cols="" class="form-control" name="content"
 								required="required"><%=p.getContent() %></textarea>
 
-						</div><br>
-						<div class="mb-4">
-						  		<input type="text" name="imgUrl" class="form-control text-light" placeholder="Image Url">
 						</div>
+						
+						<div class="form-group">
+							<label for="exampleInputEmail1">Enter ImgUrl</label>
+							<input type="text" class="form-control" name="ImgUrl"
+								required="required"  value="<%=p.getImgUrl() %>"/>
+						</div><br>
+						
 
 						<div class="container text-center">
 							<button type="submit" class="btn">Add</button>

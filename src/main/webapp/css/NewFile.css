@@ -2,7 +2,7 @@
 
 
 .btn {
-    background-color: #6B46C1;
+    background-color: aquamarine;
     border-radius: 50px;
 }
 
@@ -59,11 +59,11 @@ a {
 
 .filter:hover {
     cursor: pointer;
-    color:#fff;
+    color:aquamarine !important;
 }
 
 .filter::focus {
-    border-bottom: 2px solid #222;
+    border-bottom: 2px solid #111;
 }
 
 .form-control::placeholder {
