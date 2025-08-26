@@ -74,7 +74,7 @@ pageEncoding="ISO-8859-1"%>
                       <option value="Finance">Finance</option>
                       <option value="Entertainment">Entertainment</option>
                       <option value="Lifestyle">Lifestyle</option>
-                      <option value="Business">Businesss</option>
+                      <option value="Business">Business</option>
                     </select>
                   </div>
 
