@@ -30,16 +30,22 @@ public class DeleteServlet extends HttpServlet {
 		
 		if(f)
 		{
-			
+			com.user.Admin admin = (com.user.Admin) session.getAttribute("adminS");
+			System.out.println(admin);
+			if(admin != null) {
+				session.setAttribute("DeleteMsg", "Blog Deleted Successfully");
+				response.sendRedirect("AdminPage.jsp");
+			}else {
 			session.setAttribute("DeleteMsg", "Blog Deleted Successfully");
-			response.sendRedirect("showblogs.jsp");
-			
+			response.sendRedirect("myblogs.jsp");
+			}
 		}
 		else
 		{
 			 session.setAttribute("wrongMsg", "Something went wrong on server");
-			 response.sendRedirect("showblogs.jsp");
+			 response.sendRedirect("myblogs.jsp");
 		}
+
 		
 		
 	

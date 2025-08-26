@@ -3,7 +3,59 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="icon" type="image/x-icon" href="https://img.icons8.com/doodle/48/blogger--v1.png">
+<title>Eblogs - Login</title>
+<%@include file="all_component/allcss.jsp"%>
+</head>
+<body class="back-img">
+	<div class="container">
+	<%@include file="all_component/navbar.jsp"%>
+		<div class="row d-flex justify-content-center align-items-center mt-5">
+			<div class="col-6">
+				<div class="card mt-2">
+					<div class="text-center text-light mt-2">
+						<i class="fa fa-user-circle fa-1x" aria-hidden="true"></i>
+						<h5>User Login</h5>
+					</div>
+					<hr class="my-4 text-light" />
 
+					<% 
+					String loginError = (String)session.getAttribute("login_error");
+					if(loginError != null) {
+					%>
+						<div class="alert alert-danger" role="alert"><%= loginError %></div>
+					<% 
+					session.removeAttribute("login_error");
+					}
+					%>
+
+					<form action="LoginServlet" method="post">
+						<div class="card-body p-5">
+							<div class="mb-3">
+								<input type="email" class="form-control" id="email" 
+									name="uemail" placeholder="Enter email" required>
+							</div>
+							<div class="mb-3">
+								<input type="password" class="form-control" id="password"
+									name="upassword" placeholder="Password" required>
+							</div>
+							<button type="submit" class="btn mb-3 col-12 text-light">Login</button><br>
+							<div align="center" class="text-light" style="border: none;">
+								Don't have an account? <a href="register.jsp" class="text-light">Register Now</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="icon" type="image/x-icon" href="https://img.icons8.com/doodle/48/blogger--v1.png">
 <title>Eblogs</title>
@@ -27,7 +79,7 @@
 					
 	  <div class=" w-100 shadow-lgmx-auto d-flex justify-content-center align-items-center  mt-5">
             <div class="col-md-6 p-5 card ">
-              <h3 class="mb-3 text-center text-light ">Login</h3>
+              <h3 class="mb-3 text-center text-light ">User Login</h3>
               <form action="LoginServlet" method="post">
                 <div class="mb-3">
                   <input
@@ -59,6 +111,7 @@
                     I agree to the
                     <a href="#" class="text-light" >Terms & Conditions</a>
                   </label>
+                  
                 </div>
                 <button
                   type="submit"
@@ -72,6 +125,11 @@
                     href="register.jsp"
                     class="text-decoration-underline text-light"
                     >Register</a
+                  >
+                   <a
+                    href="AdminLogin.jsp"
+                    class="text-decoration-underline text-light offset-3"
+                    >Admin Login</a
                   >
                 </p>
                 <hr class="my-4 text-light" />

@@ -351,7 +351,7 @@ Version 8.0.16
 
   - WL#12825, Remove third-party libraries from sources and bundles.
 
-  - Fix for Bug#93590 (29054329), javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify.
+  - Fix for Bug#93590 (29054329), jakarta.net.ssl.SSLException: closing inbound before receiving peer's close_notify.
 
   - Fix for Bug#94414 (29384853), Connector/J RPM package have version number in path.
 
@@ -669,7 +669,7 @@ Version 8.0.8
 
 Version 8.0.7
 
-  - Fix for Bug#26227653, WL#10528 DIFF BEHAVIOUR WHEN SYSTEM PROP JAVAX.NET.SSL.TRUSTSTORETYPE IS SET.
+  - Fix for Bug#26227653, WL#10528 DIFF BEHAVIOUR WHEN SYSTEM PROP jakarta.NET.SSL.TRUSTSTORETYPE IS SET.
 
   - WL#10528, DevAPI: Ensure all connectors are secure by default.
 
@@ -750,7 +750,7 @@ Version 8.0.7
 
   - Fix for Bug#69526 (17035755), 'Abandoned connection cleanup thread' at mysql-connector-java-5.1.25.
 
-  - Fix for Bug#82826 (24942672), Unneeded version requirement for javax.net.ssl Import-Package on OSGi MANIFEST.MF.
+  - Fix for Bug#82826 (24942672), Unneeded version requirement for jakarta.net.ssl Import-Package on OSGi MANIFEST.MF.
 
 Version 6.0.6
 
@@ -780,7 +780,7 @@ Version 6.0.6
 
   - Fix for Bug#81691 (23519211), GETLASTDOCUMENTIDS() DOESN'T REPORT IDS PROVIDED BY USER.
 
-  - Fix for Bug#82826 (24942672), Unneeded version requirement for javax.net.ssl Import-Package on OSGi MANIFEST.MF.
+  - Fix for Bug#82826 (24942672), Unneeded version requirement for jakarta.net.ssl Import-Package on OSGi MANIFEST.MF.
 
 10-21-16 - Version 6.0.5
 

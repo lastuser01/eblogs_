@@ -1,5 +1,94 @@
 package com.DAO;
+package com.DAO;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.user.UserDetails;
+
+public class UserDAO {
+    private Connection conn;
+
+    public UserDAO(Connection conn) {
+        super();
+        this.conn = conn;
+    }
+
+    /**
+     * Adds a new user to the database
+     * @param us UserDetails object with user information
+     * @return true if operation is successful, false otherwise
+     */
+    public boolean addUser(UserDetails us) {
+        boolean f = false;
+
+        try {
+            // Check if username or email already exists
+            String checkQuery = "SELECT * FROM users WHERE username = ? OR email = ?";
+            PreparedStatement checkPs = conn.prepareStatement(checkQuery);
+            checkPs.setString(1, us.getUsername());
+            checkPs.setString(2, us.getEmail());
+            ResultSet rs = checkPs.executeQuery();
+
+            if (rs.next()) {
+                // Username or email already exists
+                return false;
+            }
+
+            String query = "INSERT INTO users(fname, lname, username, email, password) VALUES(?,?,?,?,?)";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, us.getFname());
+            ps.setString(2, us.getLname());
+            ps.setString(3, us.getUsername());
+            ps.setString(4, us.getEmail());
+            ps.setString(5, us.getPassword());
+
+            int i = ps.executeUpdate();
+            if (i > 0) {
+                f = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
+    }
+
+    /**
+     * Authenticates a user with email and password
+     * @param email User's email
+     * @param password User's password
+     * @return UserDetails object if login successful, null otherwise
+     */
+    public UserDetails loginUser(String email, String password) {
+        UserDetails user = null;
+
+        try {
+            String query = "SELECT * FROM users WHERE email = ? AND password = ?";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, email);
+            ps.setString(2, password);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                user = new UserDetails();
+                user.setId(rs.getInt("id"));
+                user.setFname(rs.getString("fname"));
+                user.setLname(rs.getString("lname"));
+                user.setUsername(rs.getString("username"));
+                user.setEmail(rs.getString("email"));
+                user.setPassword(rs.getString("password"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return user;
+    }
+}
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="Eblogs_Using_Servlet_And_Jsp">
+        
+    <wb-module deploy-name="Eblogs_Using_Servlet_And_Jsp1-0.0.1-SNAPSHOT">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+                
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <property name="context-root" value="Eblogs_Using_Servlet_And_Jsp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+                
         <property name="java-output-path" value="/Eblogs_Using_Servlet_And_Jsp/build/classes"/>
+        <property name="context-root" value="Eblogs_Using_Servlet_And_Jsp1"/>
+            
     </wb-module>
+    
 </project-modules>

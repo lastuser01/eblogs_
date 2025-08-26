@@ -33,13 +33,14 @@
         
         <div class="container mt-2 pt-lg-4 overflow-y-scroll" id="showblog" style="height:100vh;">
             <% 
-                java.util.List<Post> post = com.DAO.PostDAO.showBlogs();
+                java.util.List<Post> post = com.DAO.PostDAO.showBlogsbyId(user1.getId());
                 for(Post po : post) { 
                 if(user1 != null && po.getAuthor().equals(user1.getName())) {%>
                 <a href="indivisual.jsp?id=<%= po.getId() %>" class="row text-decoration-none">
                     <div class="card-body px-4 col-lg-4 ">
                         <p class="my-3 text-light">    
-                            <i class="fa fa-user-circle" aria-hidden="true"></i> <%=po.getAuthor() %>
+                            <img src="https://i.pravatar.cc/103" class="rounded-circle" alt="<%=user1.getName()%>" loading="lazy" height="30" /> 
+                            <%=po.getAuthor() %>
                         </p>
                         <h3 class="card-title text-light mb-2"><%=po.getTitle() %></h3>
                         <p class="text-light "><%= po.getCategory() %></p>
@@ -59,11 +60,13 @@
                     <div class="col-lg-3 d-flex align-items-center"><img src="<%=po.getImgUrl() %>" class="card-img-top" alt="..."></div>
                     <hr class="text-light">
                 </a>
-                <div class="container mb-5">
+               <% if(user1 != null && po.getAuthor().equals(user1.getName())) { %>
+                    <div class="container mb-5">
                         <a href="DeleteServlet?note_id=<%=po.getId() %>" class="btn">Delete</a>
                         <a href="edit.jsp?note_id=<%=po.getId() %>" class="btn">Edit</a>
                     </div>
-            <% } } %>
+     			
+            <% } } } %>
         </div>
     </div>
     

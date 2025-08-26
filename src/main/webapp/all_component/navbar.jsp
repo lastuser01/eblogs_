@@ -17,8 +17,8 @@
 	
 	<div class="collapse navbar-collapse justify-content-lg-end" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item"><a class="nav-link text-light" href="addblogs.jsp">
-			<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Write</a></li>
+			<li class="nav-item "><a class="nav-link text-light" href="addblogs.jsp">
+			<i class="fa fa-pencil-square-o fs-4" aria-hidden="true"></i> Write</a></li>
 			
 			<%
 		com.user.UserDetails user = (com.user.UserDetails) session.getAttribute("userD");
@@ -26,9 +26,7 @@
 		if(user != null) {	
 		%>
 		
-			<li class="nav-item"><a class="nav-link text-light ms-lg-3" href="myblogs.jsp"><i
-					class="fa fa-address-book-o" aria-hidden="true"></i> My Blogs</a>
-			</li>
+			
 		</ul>
 
 		<div class="">
@@ -45,43 +43,67 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content ">
 				<div class="modal-header ">
-					<h5 class="modal-title" id="exampleModalLabel">User Details</h5>
+					
 					<button type="button" class="btn-close" aria-label="Close" data-dismiss="modal"></button>
 				</div>
-				<div class="modal-body ">
-
-					<div class="container text-center">
-
-						<i class="fa fa-user fa-3x"></i>
-						<h5></h5>
-						<table class="table">
-							<tbody>
-								<tr>
-									<th>User Id</th>
-										<td><%= user.getId() %></td>
-								</tr>
-
-								<tr>
-									<th>Full Name</th>
-									<td><%= user.getName() %></td>
-								</tr>
-
-								<tr>
-									<th>Email Id</th>
-									<td><%= user.getEmail() %></td>
-								</tr>
-
-							</tbody>
-						</table>
-
-						<div>
-							<a href="LogoutServlet" class="btn  my-2 my-sm-0 " type="submit">
-								<i class="fa fa-sign-out" aria-hidden="true"></i>
+				<div class="modal-body d-flex flex-column ">
+						
+							<a href="profile.jsp" class="  my-2 my-sm-0 " type="submit">
+							<i class="bi bi-person"></i>Profile
+							</a>
+							<a href="#" class="  my-2 my-sm-0 " type="submit">
+						    <i class="bi bi-bookmarks"></i>library
+							</a>
+							<a href="#" class="  my-2 my-sm-0 " type="submit">
+						    <i class="bi bi-gear"></i>Settings
+							</a>
+							<a href="#" class="  my-2 my-sm-0 " type="submit">
+								about us
+							</a>
+							<a href="LogoutServlet" class="  my-2 my-sm-0 " type="submit">
 								Logout
 							</a>
-						</div>
+						
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.jsp">
+      <img src="https://img.icons8.com/doodle/48/blogger--v1.png" alt="Eblogs Logo" height="30">
+      Eblogs
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="showblogs.jsp">Blogs</a>
+        </li>
+      </ul>
 
-                     </div>
+      <% 
+      com.user.UserDetails user = (com.user.UserDetails) session.getAttribute("userD");
+      if (user == null) { 
+      %>
+        <a href="login.jsp" class="btn me-2 text-light">Login</a>
+        <a href="register.jsp" class="btn text-light">Register</a>
+      <% } else { %>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle text-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-user-circle"></i> <%= user.getUsername() %>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="profile.jsp">Profile</a></li>
+            <li><a class="dropdown-item" href="addBlog.jsp">Add Blog</a></li>
+            <li><a class="dropdown-item" href="LogoutServlet">Logout</a></li>
+          </ul>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</nav>
 					</div>
 					
 				</div>

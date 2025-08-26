@@ -99,3 +99,7 @@ a {
 	padding-left:40px;
 }
 
+.modal-content{
+	position:absolute; 
+}
+
